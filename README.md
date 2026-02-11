@@ -11,3 +11,10 @@ sudo chmod 666 /dev/ttyUSB1
 ros2 daemon stop
 rm -rf /dev/shm/fastrtps*
 ros2 daemon start #IMU ghost
+
+# Set the port to the correct baud rate (Change USB0 to USB1 if needed)
+stty -F /dev/ttyUSB0 115200 raw
+# Read the raw output
+cat /dev/ttyUSB0 #PUBLISHING CODE FOR IMU
+
+ls /dev/ttyUSB* /dev/ttyACM* #list USB devices
