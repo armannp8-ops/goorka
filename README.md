@@ -7,3 +7,7 @@ ros2 run cartographer_ros cartographer_node     -configuration_directory /home/a
 ros2 run cartographer_ros cartographer_occupancy_grid_node -resolution 0.05 #cartographer res
 
 sudo chmod 666 /dev/ttyUSB1
+
+ros2 daemon stop
+rm -rf /dev/shm/fastrtps*
+ros2 daemon start #IMU ghost
