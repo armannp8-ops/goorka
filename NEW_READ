@@ -1,0 +1,9 @@
+ros2 launch slam_toolbox online_async_launch.py slam_params_file:=/home/arman/map_ws/src/articubot_one/config/mapper_params_online_async.yaml use_sim_time:=false
+#SLAM TOOLBOX
+
+source ~/map_ws/install/setup.bash
+ros2 launch articubot_one my_robot.launch.py
+
+python3 ~/map_ws/src/wasd_teleop.py
+
+
