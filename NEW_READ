@@ -6,4 +6,14 @@ ros2 launch articubot_one my_robot.launch.py
 
 python3 ~/map_ws/src/wasd_teleop.py
 
+source ~/map_ws/install/setup.bash
+ros2 launch nav2_bringup bringup_launch.py \
+use_sim_time:=false \
+autostart:=true \
+map:=/home/arman/map_ws/src/articubot_one/maps/my_room_map.yaml \
+params_file:=/home/arman/map_ws/src/articubot_one/config/nav2_params.yaml
 
+
+sudo chmod 666 /dev/ttyUSB*
+
+ros2 daemon stop rm -rf /dev/shm/fastrtps* ros2 daemon start #IMU ghost
