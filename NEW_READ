@@ -19,3 +19,5 @@ sudo chmod 666 /dev/ttyUSB*
 ros2 daemon stop rm -rf /dev/shm/fastrtps* ros2 daemon start #IMU ghost
 
 ros2 launch rosbridge_server rosbridge_websocket_launch.xml\ #web
+
+ros2 run rosbridge_server rosbridge_websocket --ros-args -p max_message_size:=100000000
