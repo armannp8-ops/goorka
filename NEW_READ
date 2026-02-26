@@ -17,3 +17,5 @@ params_file:=/home/arman/map_ws/src/articubot_one/config/nav2_params.yaml
 sudo chmod 666 /dev/ttyUSB*
 
 ros2 daemon stop rm -rf /dev/shm/fastrtps* ros2 daemon start #IMU ghost
+
+ros2 launch rosbridge_server rosbridge_websocket_launch.xml\ #web
